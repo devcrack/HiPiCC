@@ -1,0 +1,18 @@
+{% extends 'workspace.html' %}
+
+{% block forms %}
+{% endblock %}
+{% block data %}
+    <div class="data">
+        <p>Datos Módulo Dinámico</p>
+        {% if list %}
+            {% for item in list%}
+                <div class="floating-box">
+                    <p>
+                        <a href="{% url 'dynamic_data_content' directory=item %}">{{ item }}</a>
+                    </p>
+                </div>
+            {% endfor %}
+        {% endif %}
+    </div>
+{% endblock %}

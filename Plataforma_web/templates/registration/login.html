@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}Login{% endblock %}
+{% block content %}
+{#    {% if form.errors %}#}
+{#        <p>Tus Credenciales no corresponden con nuestros registros. Inténtalo de Nuevo.</p>#}
+{#    {% endif %}#}
+
+    <h2>Login</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button class="btn btn-default" type="submit">Login</button>
+            </div>
+        </div>
+        <br><br>
+        <a href="{% url 'password_reset' %}">Olvidaste tu Contraseña?</a>
+    </form>
+{% endblock %}

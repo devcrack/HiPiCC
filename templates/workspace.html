@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block title %}Workspace{% endblock %}
+
+{% block content %}
+    <h2>Workspace</h2>
+
+<div class="container">
+    <div class="card-deck">
+        <div class="card mb-4">
+            <img class="card-img-top" src="{% static 'img/graphics/diagrama_arresto_soft.jpg' %}" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">Esfera Dura</h5>
+                <p class="card-text">Descripción del Potencial de Esfera Dura</p>
+                <a  href="{% url 'hard_sphere' %}" class="btn btn-primary">Go</a>
+            </div>
+        </div>
+        <div class="card mb-4">
+            <img class="card-img-top" src="{% static 'img/graphics/diagrama_arresto_soft.jpg' %}" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">Esfera Suave</h5>
+                <p class="card-text">Descripción del Potencial de Esfera Suave</p>
+                <a href="{% url 'soft_sphere' %}" class="btn btn-primary">Go</a>
+            </div>
+        </div>
+
+        <div class="w-100 d-none d-xl-block"><!-- wrap every 5 on xl--></div>
+        <div class="card mb-4">
+            <img class="card-img-top img-fluid" src="{% static 'img/graphics/diagrama_arresto_soft.jpg' %}" alt="Card image cap">
+            <div class="card-body">
+                <h4 class="card-title">Yukawa</h4>
+                <p class="card-text">Descripción del Potencial Yukawa.</p>
+                <a href="{% url 'yukawa' %}" class="btn btn-primary">Go</a>
+            </div>
+        </div>
+        <div class="w-100 d-none d-sm-block d-md-none"><!-- wrap every 2 on sm--></div>
+        <div class="w-100 d-none d-md-block d-lg-none"><!-- wrap every 3 on md--></div>
+        <div class="card mb-4">
+            <img class="card-img-top img-fluid" src="{% static 'img/graphics/diagrama_arresto_soft.jpg' %}" alt="Card image cap">
+            <div class="card-body">
+                <h4 class="card-title">Módulo Dinámico</h4>
+                <p class="card-text">Descripción del Módulo Dinámico.</p>
+                <a href="{% url 'dynamic_module' %}" class="btn btn-primary">Go</a>
+            </div>
+        </div>
+        <div>
+            {% block data %}
+            {% endblock %}
+        </div>
+    </div>
+</div>
+{% endblock %}

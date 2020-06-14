@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div>
+        <h1>Error {{ num_error }}</h1>
+    </div>
+    <div>
+        <p>
+            {{ message }}
+        </p>
+        <h4><a href="{% url 'home' %}">Go Home</a>.</h4>
+    </div>
+{% endblock %}

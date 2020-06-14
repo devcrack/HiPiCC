@@ -1,0 +1,67 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        {# Estilos de Bootstrap #}
+        {# Estilos de Bootstrap #}
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+        <link rel="stylesheet" href="{% static 'css/home.css' %}">
+        <title>{% block title %}Welcome to HiPeCC{% endblock %}</title>
+    </head>
+    <body>
+    <div id="particles-js"></div>
+    <header>
+
+    <div class="navbar navbar-dark bg-dark shadow-sm">
+        <div class="container d-flex justify-content-between">
+            <a href="{% url 'home' %}" class="navbar-brand d-flex align-items-center">
+                <i style="margin-right: 10px; font-size: 48px" class="fab fa-cloudversify"> </i>
+                <strong>High-Performance Computer in the Cloud</strong>
+            </a>
+            {% if user.is_authenticated %}
+                <div class="btn-group" role="group" aria-label="Basic example">
+                    <a class="btn btn-primary" href="{% url 'home_workspace' %}" role="button">Modelos</a>
+                    <a class="btn btn-success" href="{% url 'home_workspace' %}" role="button">Simulaciones</a>
+                    <a class="btn btn-info" href="{% url 'home_workspace' %}" role="button">Datos</a>
+                    <a class="btn btn-danger" href="{% url 'logout' %}" role="button">Logout</a>
+                </div>
+            {% else %}
+                <div class="btn-group" role="group" aria-label="Basic example">
+                    <a class="btn btn-primary" href="{% url 'signup' %}" role="button">Sign Up</a>
+                    <a class="btn btn-secondary" href="{% url 'login' %}" role="button">Login</a>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+
+    </header>
+    <main role="main">
+        <div class="container">
+            {% block content %}
+            {% endblock %}
+        </div>
+    </main>
+        <footer>
+      <div class="container">
+        <p class="float-right">
+          <a href="#"><i style="margin-right: 5px" class="fas fa-arrow-up"></i>Inicio</a>
+        </p>
+        <p>Album example is &copy; Bootstrap, but please download and customize it for yourself!</p>
+        <p>New to Bootstrap? <a href="../../">Visit the homepage</a> or read our <a href="../../getting-started/">getting started guide</a>.</p>
+      </div>
+        </footer>
+    </body>
+    <script src="{% static 'js/particles.js' %}"></script>
+    <script type="application/javascript">
+        particlesJS.load('particles-js', '{% static 'js/particle.json' %}', function() {
+            console.log('callback - particles.js config loaded');
+        });
+    </script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</html>

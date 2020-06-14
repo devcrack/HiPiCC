@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+ {% block content %}
+     {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+                <div class="alert {{ message.tags }} alert-dismissible" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    {{ message }}
+                </div>
+            {% endfor %}
+        </ul>
+    {% endif %}
+     <div>
+        <p>Esfera Suave</p>
+        <div class="graphics_soft">
+
+        </div>
+     </div>
+    <form method="POST" class="post-form">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="save btn btn-default">Send</button>
+    </form>
+{% endblock %}

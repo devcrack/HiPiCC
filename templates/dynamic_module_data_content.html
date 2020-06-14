@@ -1,0 +1,19 @@
+{% extends 'workspace.html' %}
+
+{% block forms %}
+{% endblock %}
+{% block data %}
+    <div class="data">
+        <p>Datos Módulo Dinámico/{{ directory }} </p>
+        {% if list %}
+            {% for item in list%}
+                <div class="floating-box">
+                    <p>{{ item }}</p>
+                    <a href= "http://192.168.4.60:5002/download_fle_dyn_modl/{{ user.username }}/{{ directory }}/{{ item }}">
+                        <span class="glyphicon glyphicon-file"></span>
+                    </a>
+                </div>
+            {% endfor %}
+        {% endif %}
+    </div>
+{% endblock %}

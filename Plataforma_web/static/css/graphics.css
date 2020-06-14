@@ -1,0 +1,17 @@
+.graphics_soft{
+    background-image: url(/static/img/graphics/diagrama_arresto_soft.jpg);
+    width: 588px;
+    height: 460px;
+    margin: auto;
+    left: 10pt;
+    top: 10pt;
+}
+
+.graphics_yukawa{
+    background-image: url(/static/img/graphics/diagrama_arresto_yukawa.gif);
+    width: 700px;
+    height: 542px;
+    margin: auto;
+    left: 10pt;
+    top: 10pt;
+}

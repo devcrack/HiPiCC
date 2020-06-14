@@ -1,0 +1,22 @@
+{% extends 'workspace.html' %}
+
+{% block forms %}
+{% endblock %}
+{% block data %}
+    <div class="data">
+        <p>Datos Yukawa</p>
+        {% if list %}
+            {% for item in list%}
+                 <div class="floating-box">
+                    <p>{{ item }}</p>
+                    <a href="http://192.168.4.60:5002/download_file_Yukawa/{{ user.username }}/{{ item }}">
+                        <span class="glyphicon glyphicon-file"></span>
+                    </a>
+                    <a href="http://192.168.4.60:5002/download_file_Yukawa/{{ user.username }}/{{ item }}.png">
+                      <span class="glyphicon glyphicon-picture"></span>
+                    </a>
+                </div>
+            {% endfor %}
+        {% endif %}
+    </div>
+{% endblock %}
